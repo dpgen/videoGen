@@ -144,13 +144,13 @@ $(function () {
             <video width="480" height="480" controls>
             <source src="https://res.cloudinary.com/eru-resources/video/upload/w_1080,h_1080/l_${
               images[0]
-            },so_0,eo_5/l_${images[1]},so_5,eo_11/l_${images[2]},so_11/WhatsApp_Video_2020-12-02_at_12.45.33_PM_ogvol9.mp4" type="video/mp4">
+            },so_0,eo_5/l_${images[1]},so_5,eo_10/l_${images[2]},so_10,eo_15/l_flyer_yxmoex,so_15/AnamnesisVideo_muxros.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video> 
               <br>
               <a class="download-dp" href="https://res.cloudinary.com/eru-resources/video/upload/w_1080,h_1080/l_${
                 images[0]
-              },so_0,eo_5/l_${images[1]},so_5,eo_11/l_${images[2]},so_11/fl_attachment/WhatsApp_Video_2020-12-02_at_12.45.33_PM_ogvol9.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
+              },so_0,eo_5/l_${images[1]},so_5,eo_10/l_${images[2]},so_10,eo_15/l_flyer_yxmoex,so_15/fl_attachment/AnamnesisVideo_muxros.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
               <br>
             </div>
             
