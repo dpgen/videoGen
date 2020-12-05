@@ -88,9 +88,18 @@ $(function () {
       //adasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdsaadsdasdasdasdasdasdasdasdasdasdadas
       let count = getCount();
       let images = getImageArray();
+      let progressSpan = null;
+      if (count === 0) {
+        progressSpan = $("#image-1");
+      } else if (count === 1) {
+        progressSpan = $("#image-2");
+      } else {
+        progressSpan = $("#image-3");
+      }
+      console.log(progressSpan);
       if (count < 2) {
         console.log(count);
-
+        progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
         $.ajax({
           url: "https://api.cloudinary.com/v1_1/eru-resources/image/upload",
           type: "POST",
@@ -104,6 +113,14 @@ $(function () {
             images[count] = result.public_id;
             setCount(count + 1);
             setImageArray(images);
+            let file = document.querySelector("input[type=file]").files[0];
+            file.value = null;
+
+            fileInpbtn.css({ display: "inline-block" });
+            changebtn.css({ display: "none" });
+
+            progressSpan.html(`<i class="far fa-check-circle"></i>`);
+            $(".cropit-preview-image").attr("src", "");
             button.removeAttr("disabled").html("Upload Next Image");
           },
           error: function (xhr, status, error) {
@@ -112,6 +129,7 @@ $(function () {
         });
         return;
       }
+      progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
       $.ajax({
         url: "https://api.cloudinary.com/v1_1/eru-resources/image/upload",
         type: "POST",
@@ -125,6 +143,7 @@ $(function () {
           images[count] = result.public_id;
           setCount(count + 1);
           setImageArray(images);
+          progressSpan.html(`<i class="far fa-check-circle"></i>`);
           navigateTo("yourdp", createHTMLForImage(url));
         },
         error: function (xhr, status, error) {
@@ -137,20 +156,23 @@ $(function () {
         headerText.innerHTML = "";
         // let count = getCount();
         let images = getImageArray();
+        //   <video width="480" height="480" controls>
+        //   <source src="https://res.cloudinary.com/eru-resources/video/upload/w_1080,h_1080/l_${
+        //     images[0]
+        //   },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_fisydf,so_12/AnamnesisClip_axmlbq.mp4" type="video/mp4">
+        // Your browser does not support the video tag.
+        // </video>
         return `
           <section class="dp-container">
             <a href="?" class="arrow-back"><i class="ti-arrow-left"></i> Back</a>
             <div class="img-dp"> 
-            <video width="480" height="480" controls>
-            <source src="https://res.cloudinary.com/eru-resources/video/upload/w_1080,h_1080/l_${
-              images[0]
-            },so_0,eo_5/l_${images[1]},so_5,eo_10/l_${images[2]},so_10,eo_15/l_flyer_yxmoex,so_15/AnamnesisVideo_muxros.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video> 
+              <br>
+              <br>
+              <br>
               <br>
               <a class="download-dp" href="https://res.cloudinary.com/eru-resources/video/upload/w_1080,h_1080/l_${
                 images[0]
-              },so_0,eo_5/l_${images[1]},so_5,eo_10/l_${images[2]},so_10,eo_15/l_flyer_yxmoex,so_15/fl_attachment/AnamnesisVideo_muxros.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
+              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_fisydf,so_12/fl_attachment/AnamnesisClip_axmlbq.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
               <br>
             </div>
             
