@@ -55,7 +55,7 @@ h1 {
   font-size: 12px;
   font-style: inherit;
   font-variant: inherit;
-  font-family: Poppins-SemiBold;
+  font-family: OpenSans-Bold;
   text-decoration: none;
   overflow: hidden;
   -webkit-transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -407,7 +407,7 @@ button[type="submit"]:hover {
   color: rgb(255, 255, 255);
   background-color: #b97d2c;
   border-color: rgb(29, 129, 209);
-  font-family: Poppins-SemiBold;
+  font-family: OpenSans-Bold;
 }
 
 .change,
@@ -540,7 +540,7 @@ footer .social {
   border: dashed 1px;
   border-radius: 3px;
   margin-top: 7px;
-  width: 224px;
+  width: 290px;
   margin-left: 20%;
   height: 250px;
 }
@@ -654,7 +654,7 @@ button[type="submit"] {
   }
   .cropit-preview {
     width: 260px;
-    height: 291px;
+    height: 225px;
     margin-left: 5%;
   }
   .arrow-back {
@@ -681,7 +681,7 @@ button[type="submit"] {
   }
   .cropit-preview {
     width: 225px;
-    height: 252px;
+    height: 195px;
     margin-left: 5%;
   }
   .under p {
@@ -781,16 +781,30 @@ button[type="submit"] {
   src: url("../fonts/SmoothStone/SmoothStone-Regular.ttf");
 }
 
-/* SmoothStone */
+/* Autography */
 /* Regular */
 @font-face {
   font-family: "Autography";
   src: url("../fonts/autography/Autography.otf");
 }
 
-/* SmoothStone */
-/* Regular */
+/* Poppins */
+/* Semi-Bold */
 @font-face {
   font-family: "Poppins-SemiBold";
   src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
+}
+
+/* Autography */
+/* Regular */
+@font-face {
+  font-family: "TransformersMovie";
+  src: url("../fonts/transformers_movie/Transformers\ Movie.ttf");
+}
+
+/* Poppins */
+/* Semi-Bold */
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
 }

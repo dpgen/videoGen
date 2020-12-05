@@ -79,9 +79,9 @@ $(function () {
     button.attr("disabled", "disabled").html("...processing");
 
     // x, y, width, height
-    const picData = [315, 174, 459, 513];
+    const picData = [254, 208, 574, 496];
     // name, y, x
-    const nameData = [`- ${username}`, 868, 331, testimony];
+    const nameData = [username, 728, 286, testimony];
     // const nameData = [username + ",", 1295, 685, ministryName];
 
     createDP(username, imageData, picData, nameData, function (url) {
@@ -265,7 +265,7 @@ $(function () {
       };
 
     var userImg = loadImage(imageUrl);
-    var frameImg = loadImage("./src/img/firstFrame.jpg");
+    var frameImg = loadImage("./src/img/firstFrame.png");
 
     function loadImage(src) {
       var img = new Image();
@@ -291,16 +291,16 @@ $(function () {
       //Write user name
       ctx.textBaseline = "top";
       ctx.textAlign = "center";
-      ctx.font = "63px Autography";
-      ctx.fillStyle = "#fd6003";
+      ctx.font = "63px TransformersMovie";
+      ctx.fillStyle = "#3a2c24";
       var canvasText = name[0];
-      ctx.fillText(canvasText, name[2] + 209, name[1]);
+      ctx.fillText(canvasText, 540, name[1]);
       // ctx.renderText(name[3], name[2], name[1], 1);
 
       //Write testimony
-      ctx.font = "38px Poppins-SemiBold";
-      ctx.fillStyle = "#060c12";
-      wrapText(ctx, name[3], 540, 709, 30, 50, 0);
+      ctx.font = "25px OpenSans-Bold";
+      ctx.fillStyle = "#2c211b";
+      wrapText(ctx, name[3], 540, 873, 30, 38, 0);
 
       cb(canvas.toDataURL("image/jpeg", 1.0));
     }
