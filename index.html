@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Singlz Summit DP Generator</title>
+    <link
+      rel="stylesheet"
+      src="//normalize-css.googlecode.com/svn/trunk/normalize.css"
+    />
+    <link rel="stylesheet" type="text/css" href="src/css/style.css?v=0.0" />
+    <link rel="stylesheet" type="text/css" href="src/fonts/themify-icons.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Caveat"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/96452597b5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="src/js/bundle.js"></script> -->
+  </head>
+  <body>
+    <header>
+      <div id="header-image">
+        <img id="logo" src="./src/img/ssLogo.png" alt="Singlz Summit Logo" />
+      </div>
+      <div id="header-text">
+        <h1 style="font-family: Autography">#SinglzSummit20</h1>
+      </div>
+    </header>
+    <main>
+      <section class="under">
+        <p class="under-title">
+          Generate your <br />personal Singlz Summit DP!
+        </p>
+        <p class="sub-title">
+          it's 100% Easy and it Generates <strong>Automatically.</strong>
+        </p>
+        <div class="hidden">
+          <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div>
+            <div style="height: 20px"></div>
+            <div>
+              First Image:
+              <span id="image-1">Not uploaded</span>
+            </div>
+            <div>Second Image: <span id="image-2">Not uploaded</span></div>
+            <div>Third Image: <span id="image-3">Not uploaded</span></div>
+            <div>
+              Creating Video: <span id="video">No uploaded Images</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card-u">
+        <form
+          enctype="multipart/form-data"
+          action=""
+          method="POST"
+          onsubmit="event.preventDefault();"
+        >
+          <div class="card-container">
+            <div class="form-container" style="margin-top: 8%">
+              <input
+                type="text"
+                id="fullname"
+                class="form-control2"
+                placeholder="Name"
+                required
+                maxlength="15"
+              />
+              <span class="input-field_helper hidden">Name</span>
+              <p
+                style="
+                  float: right;
+                  margin-top: 5%;
+                  margin-bottom: 0;
+                  margin-right: 15%;
+                  color: grey;
+                "
+              >
+                <span id="counter">0</span> of 70
+              </p>
+              <textarea
+                id="testimony"
+                class="form-control2"
+                style="margin-bottom: 10%"
+                placeholder="Why should your friends attend singlz summit?"
+                maxlength="70"
+                required
+              ></textarea>
+            </div>
+            <div class="image-editor">
+              <!-- <input type="file" class="cropit-image-input"> -->
+              <span
+                class="btn btn-input fileinput-button"
+                style="cursor: pointer"
+              >
+                <i class="ti-camera"></i>
+                <span>Choose an image...</span>
+                <input
+                  id="file"
+                  name="file"
+                  type="file"
+                  class="cropit-image-input"
+                  required=""
+                />
+                <!-- <input
+                  type="hidden"
+                  name="image-data"
+                  class="hidden-image-data"
+                /> -->
+              </span>
+              <div>
+                <span
+                  type="reset"
+                  class="btn-input change hide"
+                  style="cursor: pointer"
+                >
+                  <i class="ti-image"></i>
+                  <span>Change Image</span>
+                </span>
+              </div>
+              <div class="">
+                <div class="cropit-preview"></div>
+
+                <div class="image-size-label">Resize image</div>
+                <input
+                  type="range"
+                  class="cropit-image-zoom-input"
+                  style="margin-left: 20%"
+                />
+
+                <input
+                  type="hidden"
+                  name="image-data"
+                  class="hidden-image-data"
+                />
+              </div>
+
+              <button
+                value="submit"
+                type="submit"
+                class="kb-button create-dp"
+                style="margin-left: 20%; margin-top: 10%; margin-bottom: 10%"
+              >
+                Upload First Image
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/jquery.cropit.js"></script>
+    <script src="src/js/main.js?v=1.7"></script>
+    <!-- <script src="src/js/cloud.js"></script> -->
+    <script>
+      const textarea = document.getElementById("testimony");
+
+      textarea.addEventListener("input", (event) => {
+        const target = event.currentTarget;
+        const charLen = target.value.length;
+        const counter = document.getElementById("counter");
+        counter.innerText = charLen;
+      });
+      // function updateCounter() {
+      //   let textArea = document.getElementById("testimony");
+      //   let counter = document.getElementById("counter");
+      //   console.log(textArea.value.length);
+      // }
+
+      let uploadCounter = 0;
+      let images = ["", "", ""];
+
+      function getImageArray() {
+        return images;
+      }
+      function setImageArray(newImageArray) {
+        images = newImageArray;
+      }
+      function getCount() {
+        return uploadCounter;
+      }
+      function setCount(newCount) {
+        uploadCounter = newCount;
+      }
+    </script>
+  </body>
+</html>
