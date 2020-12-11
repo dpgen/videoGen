@@ -79,9 +79,9 @@ $(function () {
     button.attr("disabled", "disabled").html("...processing");
 
     // x, y, width, height
-    const picData = [254, 208, 574, 496];
+    const picData = [48.6, 311, 490.8, 422.5];
     // name, y, x
-    const nameData = [username, 728, 286, testimony];
+    const nameData = [username, 351, 555, testimony];
     // const nameData = [username + ",", 1295, 685, ministryName];
 
     createDP(username, imageData, picData, nameData, function (url) {
@@ -312,17 +312,17 @@ $(function () {
 
       //Write user name
       ctx.textBaseline = "top";
-      ctx.textAlign = "center";
-      ctx.font = "63px TransformersMovie";
-      ctx.fillStyle = "#3a2c24";
+      ctx.textAlign = "left";
+      ctx.font = "63px Autography";
+      ctx.fillStyle = "#46312b";
       var canvasText = name[0];
-      ctx.fillText(canvasText, 540, name[1]);
+      ctx.fillText(canvasText, name[2], name[1]);
       // ctx.renderText(name[3], name[2], name[1], 1);
 
       //Write testimony
-      ctx.font = "25px OpenSans-Bold";
-      ctx.fillStyle = "#2c211b";
-      wrapText(ctx, name[3], 540, 873, 30, 38, 0);
+      ctx.font = "29.5px OpenSans-Bold";
+      ctx.fillStyle = "#46312b";
+      wrapText(ctx, name[3], 556, 527, 30, 37, 0);
 
       cb(canvas.toDataURL("image/jpeg", 1.0));
     }
