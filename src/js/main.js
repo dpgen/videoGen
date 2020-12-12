@@ -81,7 +81,7 @@ $(function () {
     // x, y, width, height
     const picData = [48.6, 311, 490.8, 422.5];
     // name, y, x
-    const nameData = [username, 351, 555, testimony];
+    const nameData = [username, 347, 555, testimony];
     // const nameData = [username + ",", 1295, 685, ministryName];
 
     createDP(username, imageData, picData, nameData, function (url) {
@@ -313,7 +313,7 @@ $(function () {
       //Write user name
       ctx.textBaseline = "top";
       ctx.textAlign = "left";
-      ctx.font = "63px Autography";
+      ctx.font = "42px OpenSans-Bold";
       ctx.fillStyle = "#46312b";
       var canvasText = name[0];
       ctx.fillText(canvasText, name[2], name[1]);
@@ -322,7 +322,7 @@ $(function () {
       //Write testimony
       ctx.font = "29.5px OpenSans-Bold";
       ctx.fillStyle = "#46312b";
-      wrapText(ctx, name[3], 556, 527, 30, 37, 0);
+      wrapText(ctx, name[3], 555, 538, 30, 37, 0);
 
       cb(canvas.toDataURL("image/jpeg", 1.0));
     }
