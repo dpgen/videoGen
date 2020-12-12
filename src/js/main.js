@@ -81,7 +81,7 @@ $(function () {
     // x, y, width, height
     const picData = [48.6, 311, 490.8, 422.5];
     // name, y, x
-    const nameData = [username, 351, 555, testimony];
+    const nameData = [username, 347, 555, testimony];
     // const nameData = [username + ",", 1295, 685, ministryName];
 
     createDP(username, imageData, picData, nameData, function (url) {
@@ -159,7 +159,7 @@ $(function () {
         //   <video width="480" height="480" controls>
         //   <source src="https://res.cloudinary.com/dziwvi89t/video/upload/w_1080,h_1080/l_${
         //     images[0]
-        //   },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/AnamnesisClip_vaih8f.mp4" type="video/mp4">
+        //   },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/AnamnesisClip_mbuvyh.mp4" type="video/mp4">
         // Your browser does not support the video tag.
         // </video>
         return `
@@ -172,7 +172,7 @@ $(function () {
               <br>
               <a class="download-dp" href="https://res.cloudinary.com/dziwvi89t/video/upload/w_1080,h_1080/l_${
                 images[0]
-              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/fl_attachment/AnamnesisClip_vaih8f.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
+              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/fl_attachment/AnamnesisClip_mbuvyh.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
               <br>
             </div>
             
@@ -313,7 +313,7 @@ $(function () {
       //Write user name
       ctx.textBaseline = "top";
       ctx.textAlign = "left";
-      ctx.font = "63px Autography";
+      ctx.font = "42px OpenSans-Bold";
       ctx.fillStyle = "#46312b";
       var canvasText = name[0];
       ctx.fillText(canvasText, name[2], name[1]);
@@ -322,7 +322,7 @@ $(function () {
       //Write testimony
       ctx.font = "29.5px OpenSans-Bold";
       ctx.fillStyle = "#46312b";
-      wrapText(ctx, name[3], 556, 527, 30, 37, 0);
+      wrapText(ctx, name[3], 555, 538, 30, 37, 0);
 
       cb(canvas.toDataURL("image/jpeg", 1.0));
     }
