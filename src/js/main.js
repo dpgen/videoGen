@@ -159,7 +159,7 @@ $(function () {
         //   <video width="480" height="480" controls>
         //   <source src="https://res.cloudinary.com/dziwvi89t/video/upload/w_1080,h_1080/l_${
         //     images[0]
-        //   },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/AnamnesisClip_vaih8f.mp4" type="video/mp4">
+        //   },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/AnamnesisClip_mbuvyh.mp4" type="video/mp4">
         // Your browser does not support the video tag.
         // </video>
         return `
@@ -172,7 +172,7 @@ $(function () {
               <br>
               <a class="download-dp" href="https://res.cloudinary.com/dziwvi89t/video/upload/w_1080,h_1080/l_${
                 images[0]
-              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/fl_attachment/AnamnesisClip_vaih8f.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
+              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/fl_attachment/AnamnesisClip_mbuvyh.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
               <br>
             </div>
             
