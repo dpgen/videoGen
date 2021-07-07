@@ -67,7 +67,7 @@ $(function () {
   $("form").submit(function (e) {
     e.preventDefault();
     var username = $("#fullname").val();
-    var testimony = $("#testimony").val();
+    var testimony = ""; /* $("#testimony").val();*/
     // Move cropped image data to hidden input
     var imageData = $(".image-editor").cropit("export", {
       type: "image/jpeg",
@@ -79,9 +79,9 @@ $(function () {
     button.attr("disabled", "disabled").html("...processing");
 
     // x, y, width, height
-    const picData = [48.6, 311, 490.8, 422.5];
+    const picData = [82, 216, 407, 407];
     // name, y, x
-    const nameData = [username, 347, 555, testimony];
+    const nameData = [`${username}`, 256, 550, testimony];
     // const nameData = [username + ",", 1295, 685, ministryName];
 
     createDP(username, imageData, picData, nameData, function (url) {
@@ -101,11 +101,11 @@ $(function () {
         console.log(count);
         progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
         $.ajax({
-          url: "https://api.cloudinary.com/v1_1/dziwvi89t/image/upload",
+          url: "https://api.cloudinary.com/v1_1/dpsdxgdxk/image/upload",
           type: "POST",
           data: {
             file: url,
-            upload_preset: "u0kfvkrt",
+            upload_preset: "ogam9eth",
           },
           success: function (result) {
             console.log(result);
@@ -131,11 +131,11 @@ $(function () {
       }
       progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
       $.ajax({
-        url: "https://api.cloudinary.com/v1_1/dziwvi89t/image/upload",
+        url: "https://api.cloudinary.com/v1_1/dpsdxgdxk/image/upload",
         type: "POST",
         data: {
           file: url,
-          upload_preset: "u0kfvkrt",
+          upload_preset: "ogam9eth",
         },
         success: function (result) {
           console.log(result);
@@ -157,7 +157,7 @@ $(function () {
         // let count = getCount();
         let images = getImageArray();
         //   <video width="480" height="480" controls>
-        //   <source src="https://res.cloudinary.com/dziwvi89t/video/upload/w_1080,h_1080/l_${
+        //   <source src="https://res.cloudinary.com/dpsdxgdxk/video/upload/w_1080,h_1080/l_${
         //     images[0]
         //   },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/AnamnesisClip_mbuvyh.mp4" type="video/mp4">
         // Your browser does not support the video tag.
@@ -170,9 +170,9 @@ $(function () {
               <br>
               <br>
               <br>
-              <a class="download-dp" href="https://res.cloudinary.com/dziwvi89t/video/upload/w_1080,h_1080/l_${
+              <a class="download-dp" href="https://res.cloudinary.com/dpsdxgdxk/video/upload/w_1080,h_1080/l_${
                 images[0]
-              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/fl_attachment/AnamnesisClip_mbuvyh.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
+              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_flyer_yhtdyu,so_12/fl_attachment/BeconClip_rgxqon.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
               <br>
             </div>
             
@@ -274,7 +274,7 @@ $(function () {
   function createDP(username, imageUrl, pic, name, cb) {
     var canvas = document.createElement("canvas"),
       ctx = canvas.getContext("2d"),
-      imageCount = 2,
+      imageCount = 3,
       view = {
         x: pic[0],
         y: pic[1],
@@ -288,6 +288,7 @@ $(function () {
 
     var userImg = loadImage(imageUrl);
     var frameImg = loadImage("./src/img/firstFrame.png");
+    var registerImg = loadImage("./src/img/registered.png");
 
     function loadImage(src) {
       var img = new Image();
@@ -307,14 +308,21 @@ $(function () {
       ctx.drawImage(frameImg, 0, 0);
 
       ctx.drawImage(userImg, view.x, view.y, view.width, view.height);
+      ctx.drawImage(
+        registerImg,
+        -4,
+        110,
+        registerImg.width,
+        registerImg.height
+      );
 
       ctx = canvas.getContext("2d");
 
       //Write user name
       ctx.textBaseline = "top";
       ctx.textAlign = "left";
-      ctx.font = "42px OpenSans-Bold";
-      ctx.fillStyle = "#46312b";
+      ctx.font = "36px Ubuntu-Bold";
+      ctx.fillStyle = "#C18C1E";
       var canvasText = name[0];
       ctx.fillText(canvasText, name[2], name[1]);
       // ctx.renderText(name[3], name[2], name[1], 1);

@@ -540,7 +540,7 @@ footer .social {
   border: dashed 1px;
   border-radius: 3px;
   margin-top: 7px;
-  width: 290px;
+  width: 250px; /* Base */
   margin-left: 20%;
   height: 250px;
 }
@@ -653,8 +653,8 @@ button[type="submit"] {
     text-align: center;
   }
   .cropit-preview {
-    width: 260px;
-    height: 224px;
+    width: 260px; /* Base */
+    height: 260px;
     margin-left: 5%;
   }
   .arrow-back {
@@ -680,8 +680,8 @@ button[type="submit"] {
     font-size: 28px !important;
   }
   .cropit-preview {
-    width: 225px;
-    height: 194px;
+    width: 225px; /* Base */
+    height: 225px;
     margin-left: 5%;
   }
   .under p {
@@ -807,4 +807,11 @@ button[type="submit"] {
 @font-face {
   font-family: "OpenSans-Bold";
   src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
+}
+
+/* Ubuntu */
+/* Bold */
+@font-face {
+  font-family: "Ubuntu-Bold";
+  src: url("../fonts/Ubuntu/Ubuntu-Bold.ttf");
 }
