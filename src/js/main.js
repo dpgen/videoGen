@@ -170,7 +170,7 @@ $(function () {
               <br>
               <br>
               <br>
-              <a class="download-dp" href="https://res.cloudinary.com/dpsdxgdxk/video/upload/w_1080,h_1080/l_${
+              <a class="download-dp" href="https://res.cloudinary.com/dpsdxgdxk/video/upload/w_1000,h_1000/l_${
                 images[0]
               },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_flyer_yhtdyu,so_12/fl_attachment/BeconClip_rgxqon.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
               <br>
