@@ -46,6 +46,7 @@ $(function () {
   const fileInpbtn = $(".fileinput-button");
   const main = $("main");
   const mainContent = main.innerHTML;
+  let uploadedImage="";
 
   // var queryName = getUrlParameter("name");
   // var requestKey = getUrlParameter("requestKey");
@@ -79,71 +80,68 @@ $(function () {
     button.attr("disabled", "disabled").html("...processing");
 
     // x, y, width, height
-    const picData = [82, 216, 407, 407];
+    const picData = [50, 432, 440, 440];
     // name, y, x
-    const nameData = [`${username}`, 256, 550, testimony];
+    const nameData = [`${username}`, 484, 785.5, testimony];
     // const nameData = [username + ",", 1295, 685, ministryName];
 
     createDP(username, imageData, picData, nameData, function (url) {
       //adasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdsaadsdasdasdasdasdasdasdasdasdasdadas
-      let count = getCount();
-      let images = getImageArray();
-      let progressSpan = null;
-      if (count === 0) {
-        progressSpan = $("#image-1");
-      } else if (count === 1) {
-        progressSpan = $("#image-2");
-      } else {
-        progressSpan = $("#image-3");
-      }
-      console.log(progressSpan);
-      if (count < 2) {
-        console.log(count);
-        progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
-        $.ajax({
-          url: "https://api.cloudinary.com/v1_1/dpsdxgdxk/image/upload",
-          type: "POST",
-          data: {
-            file: url,
-            upload_preset: "ogam9eth",
-          },
-          success: function (result) {
-            console.log(result);
-            console.log(result.public_id);
-            images[count] = result.public_id;
-            setCount(count + 1);
-            setImageArray(images);
-            let file = document.querySelector("input[type=file]").files[0];
-            file.value = null;
+      // let count = getCount();
+      // let images = getImageArray();
+      // let progressSpan = null;
+      // if (count === 0) {
+      //   progressSpan = $("#image-1");
+      // } else if (count === 1) {
+      //   progressSpan = $("#image-2");
+      // } else {
+      //   progressSpan = $("#image-3");
+      // }
+      // console.log(progressSpan);
+      // if (count < 2) {
+      //   // console.log(count);
+      //   // progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
+      //   $.ajax({
+      //     url: "https://api.cloudinary.com/v1_1/dguznibxz/image/upload",
+      //     type: "POST",
+      //     data: {
+      //       file: url,
+      //       upload_preset: "omdtbmls",
+      //     },
+      //     success: function (result) {
+      //       console.log(result);
+      //       console.log(result.public_id);
+      //       images[count] = result.public_id;
+      //       setCount(count + 1);
+      //       setImageArray(images);
+      //       let file = document.querySelector("input[type=file]").files[0];
+      //       file.value = null;
 
-            fileInpbtn.css({ display: "inline-block" });
-            changebtn.css({ display: "none" });
+      //       fileInpbtn.css({ display: "inline-block" });
+      //       changebtn.css({ display: "none" });
 
-            progressSpan.html(`<i class="far fa-check-circle"></i>`);
-            $(".cropit-preview-image").attr("src", "");
-            button.removeAttr("disabled").html("Upload Next Image");
-          },
-          error: function (xhr, status, error) {
-            console.log(error);
-          },
-        });
-        return;
-      }
-      progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
+      //       // progressSpan.html(`<i class="far fa-check-circle"></i>`);
+      //       $(".cropit-preview-image").attr("src", "");
+      //       button.removeAttr("disabled").html("Upload Next Image");
+      //     },
+      //     error: function (xhr, status, error) {
+      //       console.log(error);
+      //     },
+      //   });
+      //   return;
+      // }
+      // progressSpan.html(`<i class="fas fa-spinner fa-spin"></i>`);
       $.ajax({
-        url: "https://api.cloudinary.com/v1_1/dpsdxgdxk/image/upload",
+        url: "https://api.cloudinary.com/v1_1/dguznibxz/image/upload",
         type: "POST",
         data: {
           file: url,
-          upload_preset: "ogam9eth",
+          upload_preset: "omdtbmls",
         },
         success: function (result) {
           console.log(result);
           console.log(result.public_id);
-          images[count] = result.public_id;
-          setCount(count + 1);
-          setImageArray(images);
-          progressSpan.html(`<i class="far fa-check-circle"></i>`);
+          uploadedImage = result.public_id;
           navigateTo("yourdp", createHTMLForImage(url));
         },
         error: function (xhr, status, error) {
@@ -155,9 +153,9 @@ $(function () {
         var headerText = document.getElementById("header-text");
         headerText.innerHTML = "";
         // let count = getCount();
-        let images = getImageArray();
+        // let images = getImageArray();
         //   <video width="480" height="480" controls>
-        //   <source src="https://res.cloudinary.com/dpsdxgdxk/video/upload/w_1080,h_1080/l_${
+        //   <source src="https://res.cloudinary.com/dguznibxz/video/upload/w_1080,h_1080/l_${
         //     images[0]
         //   },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_FinalPic_pncahn,so_12/AnamnesisClip_mbuvyh.mp4" type="video/mp4">
         // Your browser does not support the video tag.
@@ -170,9 +168,7 @@ $(function () {
               <br>
               <br>
               <br>
-              <a class="download-dp" href="https://res.cloudinary.com/dpsdxgdxk/video/upload/w_1000,h_1000/l_${
-                images[0]
-              },so_0,eo_4/l_${images[1]},so_4,eo_8/l_${images[2]},so_8,eo_12/l_flyer_yhtdyu,so_12/fl_attachment/BeconClip_rgxqon.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
+              <a class="download-dp" href="https://res.cloudinary.com/dguznibxz/video/upload/w_1080,h_1080/l_${uploadedImage},so_0,eo_4/l_frlyer_q9lnit,so_10,w_1080,h_1080/fl_attachment/SS21video_ybzrws.mp4" download="SS_DP_${username.replace(/\./g, "")}">Download Video</a>
               <br>
             </div>
             
@@ -274,7 +270,7 @@ $(function () {
   function createDP(username, imageUrl, pic, name, cb) {
     var canvas = document.createElement("canvas"),
       ctx = canvas.getContext("2d"),
-      imageCount = 3,
+      imageCount = 2,
       view = {
         x: pic[0],
         y: pic[1],
@@ -288,7 +284,6 @@ $(function () {
 
     var userImg = loadImage(imageUrl);
     var frameImg = loadImage("./src/img/firstFrame.png");
-    var registerImg = loadImage("./src/img/registered.png");
 
     function loadImage(src) {
       var img = new Image();
@@ -308,29 +303,29 @@ $(function () {
       ctx.drawImage(frameImg, 0, 0);
 
       ctx.drawImage(userImg, view.x, view.y, view.width, view.height);
-      ctx.drawImage(
-        registerImg,
-        -4,
-        110,
-        registerImg.width,
-        registerImg.height
-      );
+      // ctx.drawImage(
+      //   registerImg,
+      //   -4,
+      //   110,
+      //   registerImg.width,
+      //   registerImg.height
+      // );
 
       ctx = canvas.getContext("2d");
 
       //Write user name
       ctx.textBaseline = "top";
-      ctx.textAlign = "left";
-      ctx.font = "36px Ubuntu-Bold";
-      ctx.fillStyle = "#C18C1E";
+      ctx.textAlign = "center";
+      ctx.font = "83px Seethara";
+      ctx.fillStyle = "#a04c32";
       var canvasText = name[0];
       ctx.fillText(canvasText, name[2], name[1]);
       // ctx.renderText(name[3], name[2], name[1], 1);
 
       //Write testimony
-      ctx.font = "29.5px OpenSans-Bold";
-      ctx.fillStyle = "#46312b";
-      wrapText(ctx, name[3], 555, 538, 30, 37, 0);
+      // ctx.font = "29.5px OpenSans-Bold";
+      // ctx.fillStyle = "#46312b";
+      // wrapText(ctx, name[3], 555, 538, 30, 37, 0);
 
       cb(canvas.toDataURL("image/jpeg", 1.0));
     }

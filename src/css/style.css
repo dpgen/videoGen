@@ -123,7 +123,7 @@ main {
   line-height: 1.02;
   letter-spacing: -0.55px;
   text-align: left;
-  color: #b97d2c;
+  color: #020235;
   margin-top: 5%;
   margin-bottom: 2%;
 }
@@ -142,7 +142,7 @@ main {
 .top {
   width: 30%;
   min-height: 65%;
-  /* background: #b97d2c;*/
+  /* background: #020235;*/
   position: absolute;
   right: 5%;
   /*display: flex;*/
@@ -236,8 +236,8 @@ form {
 
 fieldset {
   margin-top: 20%;
-  background: #b97d2c8c;
-  border: 3px outset #b97d2c;
+  background: #0202358c;
+  border: 3px outset #020235;
 }
 
 legend {
@@ -249,7 +249,7 @@ legend {
   height: 10px;
   width: 10px;
   margin: 5px;
-  background-color: #bbb;
+  background-color: #51156c;
   border-radius: 50%;
   display: inline-block;
 }
@@ -298,7 +298,7 @@ legend {
   transition: background 0.2s linear 0s;
 }
 .form-control2:hover {
-  border-color: #b97d2c;
+  border-color: #020235;
   outline: none;
 }
 .input-field_helper {
@@ -316,7 +316,7 @@ legend {
   left: 60px;
 }
 input[type="text"]:focus + .input-field_helper {
-  color: #b97d2c;
+  color: #020235;
   opacity: 1 !important;
 }
 input::-webkit-input-placeholder {
@@ -330,7 +330,7 @@ input:focus::placeholder {
   color: transparent;
 }
 input[type="text"]:focus {
-  border-color: #b97d2c;
+  border-color: #020235;
   outline: none;
   background-color: transparent;
   -webkit-transition: border 0.3s ease-in;
@@ -363,7 +363,7 @@ input[type="text"]:focus {
 
 button[value="submit"] {
   box-shadow: 0px 6px 6.5px 0.5px rgba(0, 0, 0, 0.23);
-  background-color: #b97d2c;
+  background-color: #020235;
   display: block;
   font-weight: 700;
   width: 60%;
@@ -405,7 +405,7 @@ button[type="submit"]:hover {
   width: 50%;
   margin-left: 20%;
   color: rgb(255, 255, 255);
-  background-color: #b97d2c;
+  background-color: #020235;
   border-color: rgb(29, 129, 209);
   font-family: OpenSans-Bold;
 }
@@ -441,7 +441,7 @@ img#dp_result {
   max-width: 100%;
   width: 100%;
   height: 100%;
-  border: solid 3px #b97d2c;
+  border: solid 3px #020235;
   margin: 25px auto;
 }
 
@@ -452,7 +452,7 @@ img#dp_result {
   text-decoration: none;
   font-weight: 700;
   font-size: 30px;
-  color: #b97d2c;
+  color: #020235;
 }
 
 /* download btn */
@@ -475,7 +475,7 @@ img#dp_result {
   border: none;
   outline: none;
   box-shadow: 0px 6px 6.5px 0.5px rgba(0, 0, 0, 0.23);
-  background-color: #b97d2c;
+  background-color: #020235;
   color: #fff;
 }
 .share {
@@ -508,7 +508,7 @@ img#dp_result {
 }
 .social-media-handles > div > a:hover {
   text-decoration: none;
-  color: #b97d2c;
+  color: #020235;
 }
 
 /* footer */
@@ -528,7 +528,7 @@ footer .social {
 }
 .under-title {
   font-size: 45px;
-  color: #b97d2c;
+  color: #020235;
   font-family: FuturaBTBold;
 }
 .sub-title {
@@ -620,7 +620,7 @@ button[type="submit"] {
   }
   .under-title {
     font-size: 40px;
-    color: #b97d2c;
+    color: #020235;
   }
   .form-control2 {
     width: 100%;
@@ -814,4 +814,11 @@ button[type="submit"] {
 @font-face {
   font-family: "Ubuntu-Bold";
   src: url("../fonts/Ubuntu/Ubuntu-Bold.ttf");
+}
+
+/* Ubuntu */
+/* Bold */
+@font-face {
+  font-family: "Seethara";
+  src: url("../fonts/Seethara-lgpzZ.otf");
 }
